@@ -20,7 +20,7 @@ public class OrderService {
 
     public PizzaOrder createOrder(String pizzaType) {
         PizzaOrder order = new PizzaOrder();
-        // Genera un codice alfanumerico univoco di 8 caratteri
+        // Generate a unique 8-character alphanumeric code
         order.setOrderCode(UUID.randomUUID().toString().substring(0, 8).toUpperCase());
         order.setPizzaType(pizzaType);
         order.setStatus(OrderStatus.PENDING);

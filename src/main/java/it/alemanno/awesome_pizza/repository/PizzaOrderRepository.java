@@ -9,7 +9,7 @@ public interface PizzaOrderRepository extends JpaRepository<PizzaOrder, Long> {
 
     Optional<PizzaOrder> findByOrderCode(String orderCode);
 
-    // Trova il primo ordine in stato PENDING ordinato per data di creazione (il più vecchio)
+    // Find the first order in PENDING status sorted by creation date (oldest)
     Optional<PizzaOrder> findFirstByStatusOrderByCreatedAtAsc(OrderStatus status);
 
 }
