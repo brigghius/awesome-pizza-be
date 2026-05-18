@@ -64,4 +64,18 @@ class OrderServiceTest {
         verify(repository, times(1)).save(pendingOrder);
     }
 
+    @Test
+    void testGetTotalOrders() {
+        // Arrange
+        long totalOrders = 10L;
+        when(repository.count()).thenReturn(totalOrders);
+
+        // Act
+        long result = orderService.getTotalOrders();
+
+        // Assert
+        assertEquals(totalOrders, result);
+        verify(repository, times(1)).count();
+    }
+
 }

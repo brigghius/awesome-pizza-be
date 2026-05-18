@@ -44,5 +44,11 @@ public class OrderController {
                 .orElse(ResponseEntity.badRequest().build());
     }
 
+    @GetMapping("/chef/orders/count")
+    public ResponseEntity<Long> getTotalOrders() {
+        long totalOrders = orderService.getTotalOrders();
+        return ResponseEntity.ok(totalOrders);
+    }
+
 
 }
