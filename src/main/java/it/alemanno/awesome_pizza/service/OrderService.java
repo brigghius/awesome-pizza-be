@@ -54,7 +54,7 @@ public class OrderService {
         return Optional.empty();
     }
 
-    public long getTotalOrders() {
-        return repository.count();
+    public long countOrdersNotCompleted() {
+        return repository.countOrdersNotCompleted();
     }
 }

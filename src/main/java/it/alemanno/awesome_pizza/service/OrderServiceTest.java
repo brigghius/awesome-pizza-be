@@ -65,17 +65,17 @@ class OrderServiceTest {
     }
 
     @Test
-    void testGetTotalOrders() {
+    void testCountOrdersNotCompleted() {
         // Arrange
-        long totalOrders = 10L;
-        when(repository.count()).thenReturn(totalOrders);
+        long notCompletedOrders = 5L;
+        when(repository.countOrdersNotCompleted()).thenReturn(notCompletedOrders);
 
         // Act
-        long result = orderService.getTotalOrders();
+        long result = orderService.countOrdersNotCompleted();
 
         // Assert
-        assertEquals(totalOrders, result);
-        verify(repository, times(1)).count();
+        assertEquals(notCompletedOrders, result);
+        verify(repository, times(1)).countOrdersNotCompleted();
     }
 
 }

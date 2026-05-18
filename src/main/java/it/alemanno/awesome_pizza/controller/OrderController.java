@@ -44,9 +44,9 @@ public class OrderController {
                 .orElse(ResponseEntity.badRequest().build());
     }
 
-    @GetMapping("/chef/orders/count")
-    public ResponseEntity<Long> getTotalOrders() {
-        long totalOrders = orderService.getTotalOrders();
+    @GetMapping("/chef/orders/countOrdersNotCompleted")
+    public ResponseEntity<Long> countOrdersNotCompleted() {
+        long totalOrders = orderService.countOrdersNotCompleted();
         return ResponseEntity.ok(totalOrders);
     }
 
